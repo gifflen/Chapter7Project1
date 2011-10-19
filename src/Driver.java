@@ -32,7 +32,7 @@ public class Driver {
         return false;
     }
     public static void  main(String[] args){
-            String delims = "[.,?!;]+";
+            String delims = "[ .,?!;‽:]+";
 
     }
 }
