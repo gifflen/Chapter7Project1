@@ -32,7 +32,7 @@ public class Chapter7Problem1 {
         return input;
     }
     private static boolean check_for_palindrome(String input){
-        String delims = "[ .,?!;]+";
+        String delims = "[ .,?!‽:;]+";
         String[] splitString = input.split(delims);
         Queue<String> queue = new LinkedList<String>();
         Stack<String> stack = new Stack<String>();
