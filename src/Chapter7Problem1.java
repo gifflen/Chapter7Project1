@@ -12,11 +12,7 @@ import java.util.Stack;
  * Time: 10:32 PM
  * To change this template use File | Settings | File Templates.
  */
-/*
-String str = "This is a sentence.  This is a question, right?  Yes!  It is.";
-String delims = "[ .,?!]+";
-String[] tokens = str.split(delims);
- */
+
 public class Chapter7Problem1 {
     private static String get_input(){
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -36,15 +32,16 @@ public class Chapter7Problem1 {
         String[] splitString = input.split(delims);
         Queue<String> queue = new LinkedList<String>();
         Stack<String> stack = new Stack<String>();
+        //Iterate through values in the splitString with each output being the variable "word"
         for (String word : splitString){
-            if (word.length()!=0){
-                System.out.println(word);
-                queue.add(word);
-                stack.add(word);
-            }
+            //Add each word to the queue and stack
+            queue.add(word);
+            stack.add(word);
         }
         while (!queue.isEmpty()){
+            //Removes word from queue and compares it to the popped word from the stack
             int compare = queue.remove().compareToIgnoreCase(stack.pop());
+            //We can return false here since if even 1 mismatch occurs it is false.
             if (compare!=0)
                 return false;
         }
@@ -54,7 +51,6 @@ public class Chapter7Problem1 {
         String userInput = "";
         while (!userInput.equals("quit")){
             userInput = get_input();
-            System.out.println(userInput);
             if (!userInput.equals("quit")) {
                 if (check_for_palindrome(userInput)) {
                     System.out.println(userInput + " is a palindrome");
